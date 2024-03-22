@@ -5,7 +5,7 @@ I'd like to build something to help me answer the question I ask myself all spri
 
 ## Goals
 
-Because my plan is to finish this project over a weekend, I'm trying to add complexity in stages as time allows. Below are my initial stage outlines and I'll be keeping progress [notes](https://github.com/reg710/garden-angular/blob/main/notes.md).
+Because my plan is to finish this project over a weekend, I'm trying to add complexity in stages as time allows. Below are my initial stage outlines and I'll be keeping progress [notes](notes.md).
 
 - Basic
     - Enter zip code
