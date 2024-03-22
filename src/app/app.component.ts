@@ -6,7 +6,10 @@ import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LocationSearchComponent],
+  imports: [
+    RouterOutlet, 
+    LocationSearchComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -17,9 +17,9 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
 
 ## Friday
 
-- [ ] Figure out how newer version of angular handles environments.ts and how to use different url for dev and prod -- [https://angular.io/guide/build#configure-environment-specific-defaults](docs) and [https://www.joshmorony.com/production-development-environment-variables-in-ionic-angular/](blog post) to review tomorrow
-- [ ] Check that prod deploy of frontend is talking nicely to prod deploy of backend 
-- [ ] Figure out how to add scripts to start server
+- [X] Figure out how newer version of angular handles environments.ts and how to use different url for dev and prod -- [https://angular.io/guide/build#configure-environment-specific-defaults](docs) and [https://www.joshmorony.com/production-development-environment-variables-in-ionic-angular/](blog post) to review tomorrow
+- [X] Check that prod deploy of frontend is talking nicely to prod deploy of backend 
+- [X] Figure out how to add scripts to start server
 - [ ] Make front end real jazzy looking
 - [ ] Add data transform logic to backend
 - [ ] Add decicion making logic to frontend
