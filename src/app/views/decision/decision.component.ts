@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WeatherReport } from '../../models/weather.model';
 
 @Component({
   selector: 'app-decision',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './decision.component.scss'
 })
 export class DecisionComponent {
-  @Input() decisionTest = '';
+  @Input() weatherReport?: WeatherReport;
 }

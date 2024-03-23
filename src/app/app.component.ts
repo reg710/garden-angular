@@ -4,6 +4,7 @@ import { LocationSearchComponent } from './views/location-search/location-search
 import { DecisionComponent } from './views/decision/decision.component';
 import { environment } from '../environments/environment';
 import { MatCardModule } from '@angular/material/card';
+import { WeatherReport } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +24,10 @@ export class AppComponent {
   }
 
   title = 'garden-angular';
-  weatherInfoTest = ''
+  weatherReport?: WeatherReport;
 
-  processWeather(info: string) {
-    console.log(info);
-    this.weatherInfoTest = info;
+  processWeather(report: WeatherReport) {
+    console.log('parent component');
+    this.weatherReport = report;
   }
 }
