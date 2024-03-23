@@ -1,4 +1,15 @@
-<div>Hello world.</div>
+<div class="main-container">
+    <div class="app-info block">
+        <mat-card>
+            <mat-card-content>
+                <h1>Water the Garden?</h1>
+                To make such a tough decision, please search for where your garden is located.
+                <app-location-search (onWeatherReport)="processWeather($event)"></app-location-search>
+            </mat-card-content>
+        </mat-card>
+    </div>
 
-
-<app-location-search></app-location-search>
+    <div class="response block">
+        <app-decision [weatherReport]="weatherReport"></app-decision>
+    </div>
+</div>
