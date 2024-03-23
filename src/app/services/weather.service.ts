@@ -16,16 +16,18 @@ export class WeatherService {
 
   // TODO add catchError here or in subscribe
   getWeather(zip: string): Observable<WeatherReport | null> {
-    return of(WEATHER);
-    // return this.httpClient.get(`${this.url}/weather/${zip}`)
-    //   .pipe(
-    //     map((result: any) => {
-    //       if (!result) {
-    //         return null
-    //       }
-    //       return new WeatherReport(result)
-    //     })
-    //   )
+    // to use when testing layout
+    // return of(WEATHER);
+    
+    return this.httpClient.get(`${this.url}/weather/${zip}`)
+      .pipe(
+        map((result: any) => {
+          if (!result) {
+            return null
+          }
+          return new WeatherReport(result)
+        })
+      )
   }
 
 }

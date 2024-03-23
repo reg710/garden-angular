@@ -33,12 +33,11 @@ export class LocationSearchComponent {
     let zip = this.zipFormControl.value;
     if (zip) {
       this.weatherService.getWeather(zip)
-      .subscribe((response) => {
-            if (response) {
-              this.onWeatherReport.emit(response);
-              console.log(response);
-            }
-          })
-      }
+        .subscribe((response) => {
+          if (response) {
+            this.onWeatherReport.emit(response);
+          }
+        })
+    }
   }
 }

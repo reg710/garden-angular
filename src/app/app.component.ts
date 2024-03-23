@@ -19,15 +19,12 @@ import { WeatherReport } from './models/weather.model';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor() {
-    console.log(environment.message);
-  }
+  constructor() {}
 
   title = 'garden-angular';
   weatherReport?: WeatherReport;
 
   processWeather(report: WeatherReport) {
-    console.log('parent component');
     this.weatherReport = report;
   }
 }

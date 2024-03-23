@@ -1,1 +1,15 @@
-<p>{{weatherReport}}</p>
+@if (showDecision) {
+    <mat-card>
+        <mat-card-content>
+    
+            @if (water) {
+            <div>YES</div>
+            }
+            
+            @if (!water) {
+            <div>NO</div>
+            }
+    
+        </mat-card-content>
+    </mat-card>
+}
