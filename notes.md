@@ -26,11 +26,16 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
 
 ## Saturday
 
-- [ ] disable submit button if zip is not valid
-- [ ] Add decicion making logic to frontend
+- [X] disable submit button if zip is not valid
 - [ ] Replace all hardcoded request content
-    - [ ] add zip param
-    - [ ] add date query options
+    - [X] add zip param
+    - [X] add date query options - set fixed date calculation in backend rather than sending
+    - [X] import luxon to backend
+- [ ] Add decicion making logic to frontend
+
+- [ ] Figure out what to do for validation on backend?
+- [ ] Add tests to both projects
+
 - [ ] Connect with mongoDB
 - [ ] figure out how to allow access in prod when not using home IP address
 - [ ] Write out crud API routes

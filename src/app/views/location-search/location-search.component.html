@@ -4,14 +4,14 @@
             <mat-label>Zip Code</mat-label>
             <input type="text" matInput [formControl]="zipFormControl" placeholder="Ex. 11205">
             @if (zipFormControl.hasError('pattern') && !zipFormControl.hasError('required')) {
-                    <mat-error>Please enter a valid 5 digit zip code</mat-error>
-                  }
+            <mat-error>Please enter a valid 5 digit zip code</mat-error>
+            }
             @if (zipFormControl.hasError('required')) {
             <mat-error>Required</mat-error>
             }
         </mat-form-field>
     </form>
-    <button mat-raised-button color="primary" (click)="fetchWeather()">
+    <button mat-raised-button color="primary" (click)="fetchWeather()" [disabled]="zipFormControl.invalid">
         Search
     </button>
 </div>

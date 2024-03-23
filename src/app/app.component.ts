@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LocationSearchComponent } from './views/location-search/location-search.component';
+import { DecisionComponent } from './views/decision/decision.component';
 import { environment } from '../environments/environment';
 import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider'
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider'
   imports: [
     RouterOutlet,
     LocationSearchComponent,
+    DecisionComponent,
     MatCardModule,
   ],
   templateUrl: './app.component.html',
@@ -22,4 +23,10 @@ export class AppComponent {
   }
 
   title = 'garden-angular';
+  weatherInfoTest = ''
+
+  processWeather(info: string) {
+    console.log(info);
+    this.weatherInfoTest = info;
+  }
 }

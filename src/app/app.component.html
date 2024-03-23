@@ -4,7 +4,7 @@
             <mat-card-content>
                 <h1>Water the Garden?</h1>
                 To make such a tough decision, please search for where your garden is located.
-                <app-location-search></app-location-search>
+                <app-location-search (testEvent)="processWeather($event)"></app-location-search>
             </mat-card-content>
         </mat-card>
     </div>
@@ -13,6 +13,7 @@
         <mat-card>
             <mat-card-content>
                 This will be the answer
+                <app-decision [decisionTest]="weatherInfoTest"></app-decision>
             </mat-card-content>
         </mat-card>
     </div>
