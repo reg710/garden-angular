@@ -12,8 +12,8 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWeather() {
-    return this.httpClient.get(`${this.url}/weather`)
+  getWeather(zip: string) {
+    return this.httpClient.get(`${this.url}/weather/${zip}`)
   }
 
 }

@@ -3,9 +3,9 @@
         <mat-form-field>
             <mat-label>Zip Code</mat-label>
             <input type="text" matInput [formControl]="zipFormControl" placeholder="Ex. 11205">
-            <!-- @if (zipFormControl.hasError('') && !emailFormControl.hasError('required')) {
+            @if (zipFormControl.hasError('pattern') && !zipFormControl.hasError('required')) {
                     <mat-error>Please enter a valid 5 digit zip code</mat-error>
-                  } -->
+                  }
             @if (zipFormControl.hasError('required')) {
             <mat-error>Required</mat-error>
             }

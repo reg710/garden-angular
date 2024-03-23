@@ -22,15 +22,17 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class LocationSearchComponent {
 
-  // TODO add regex validator to limit to 5 digit pattern
-  zipFormControl = new FormControl('', [Validators.required])
+  zipFormControl = new FormControl('', [Validators.required, Validators.pattern(/^\d{5}$/g)])
 
   constructor(private weatherService: WeatherService) { }
 
   public fetchWeather() {
-    // this.weatherService.getWeather()
-    //   .subscribe((response) => {
-    //     console.log(response);
-    //   })
+    let zip = this.zipFormControl.value;
+    if (zip) {
+      this.weatherService.getWeather(zip)
+        .subscribe((response) => {
+          console.log(response);
+        })
+    }
   }
 }

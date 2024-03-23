@@ -20,6 +20,19 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
 - [X] Figure out how newer version of angular handles environments.ts and how to use different url for dev and prod -- [https://angular.io/guide/build#configure-environment-specific-defaults](docs) and [https://www.joshmorony.com/production-development-environment-variables-in-ionic-angular/](blog post) to review tomorrow
 - [X] Check that prod deploy of frontend is talking nicely to prod deploy of backend 
 - [X] Figure out how to add scripts to start server
-- [ ] Make front end real jazzy looking
-- [ ] Add data transform logic to backend
+- [X] Make front end real jazzy looking
+- [X] Add data transform logic to backend
+
+
+## Saturday
+
+- [ ] disable submit button if zip is not valid
 - [ ] Add decicion making logic to frontend
+- [ ] Replace all hardcoded request content
+    - [ ] add zip param
+    - [ ] add date query options
+- [ ] Connect with mongoDB
+- [ ] figure out how to allow access in prod when not using home IP address
+- [ ] Write out crud API routes
+- [ ] Create views
+- [ ] Write angular crud service
