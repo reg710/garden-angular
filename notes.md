@@ -31,10 +31,12 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
     - [X] add zip param
     - [X] add date query options - set fixed date calculation in backend rather than sending
     - [X] import luxon to backend
-- [ ] Add decicion making logic to frontend
+- [X] Add decicion making logic to frontend
+- [ ] Expand decision making display and logic
 
 - [ ] Figure out what to do for validation on backend?
 - [ ] Add tests to both projects
+    - [X] Add Cypress
 
 - [ ] Connect with mongoDB
 - [ ] figure out how to allow access in prod when not using home IP address
