@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LocationSearchComponent } from './views/location-search/location-search.component';
 import { DecisionComponent } from './views/decision/decision.component';
-import { environment } from '../environments/environment';
 import { MatCardModule } from '@angular/material/card';
 import { WeatherReport } from './models/weather.model';
 
