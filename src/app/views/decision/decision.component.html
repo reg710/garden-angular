@@ -1,15 +1,12 @@
-@if (showDecision) {
-    <mat-card data-cy="decision">
-        <mat-card-content>
+<mat-card data-cy="decision" class="decision-container">
+    <mat-card-content>
+        @if (shortAnswer) {
+            <h2>{{shortAnswer}}</h2>
+        }
+        <mat-slide-toggle [(ngModel)]="showLongAnswer">Show Long Answer</mat-slide-toggle>
     
-            @if (water) {
-            <div>YES</div>
-            }
-            
-            @if (!water) {
-            <div>NO</div>
-            }
-    
-        </mat-card-content>
-    </mat-card>
-}
+        @if (showLongAnswer) {
+        <div class="long-answer">{{longAnswer}}</div>
+        }
+    </mat-card-content>
+</mat-card>

@@ -1,3 +1,22 @@
-.mat-mdc-card-content {
-    text-align: center;
+.decision-container {
+    border: 2px solid #ffd54f;
+    margin-top: 2em;
+}
+
+.mat-mdc-slide-toggle {
+    margin-bottom: 1em;
+}
+.long-answer {
+    padding: 0.75em;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
