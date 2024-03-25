@@ -1,15 +1,23 @@
-@if (showDecision) {
-    <mat-card data-cy="decision">
-        <mat-card-content>
+<mat-card data-cy="decision" class="decision-container">
+    <mat-card-content>
+        @if (shortAnswer) {
+            <h2>{{shortAnswer}}</h2>
+        }
+        <mat-slide-toggle [(ngModel)]="showLongAnswer">Show Long Answer</mat-slide-toggle>
     
-            @if (water) {
-            <div>YES</div>
-            }
+        @if (showLongAnswer) {
+        <div class="long-answer">
             
-            @if (!water) {
-            <div>NO</div>
-            }
-    
-        </mat-card-content>
-    </mat-card>
-}
+            <p>Total Precipitation - {{this.totalRainfall}} inches</p>
+            <p>{{longAnswer}}</p>
+        
+            <ul class="report-list">
+                @for (daily of weatherReport?.data; track daily) {
+                    <li>{{ daily.datetimeStr | date:'MMM dd'}} - {{daily.precipitation}} inches</li>
+                }
+            </ul>
+
+        </div>
+        }
+    </mat-card-content>
+</mat-card>

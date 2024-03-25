@@ -27,19 +27,24 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
 ## Saturday
 
 - [X] disable submit button if zip is not valid
-- [ ] Replace all hardcoded request content
-    - [X] add zip param
-    - [X] add date query options - set fixed date calculation in backend rather than sending
-    - [X] import luxon to backend
+- [X] Replace all hardcoded request content
+- [X] add zip param
+- [X] add date query options - set fixed date calculation in backend rather than sending
+- [X] import luxon to backend
+
+## Sunday
+
 - [X] Add decicion making logic to frontend
-- [ ] Expand decision making display and logic
+- [X] Expand decision making display and logic
+- [X] Add Cypress
+- [X] Connect with mongoDB
+- [X] Write out crud API routes
+
+## TODO
 
 - [ ] Figure out what to do for validation on backend?
-- [ ] Add tests to both projects
-    - [X] Add Cypress
-
-- [ ] Connect with mongoDB
-- [ ] figure out how to allow access in prod when not using home IP address
-- [ ] Write out crud API routes
-- [ ] Create views
+- [ ] Add tests to backend
+- [ ] Figure out how to allow access in prod when not using home IP address
+- [ ] Create crud views
 - [ ] Write angular crud service
+- [ ] Fix cypress e2e server stub response
