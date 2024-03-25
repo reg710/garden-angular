@@ -4,7 +4,12 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatTable, MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IPlant } from '../../models/plant.model';
-
+import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 const TEMP_PLANTS: IPlant[] = [
   {
@@ -19,7 +24,17 @@ const TEMP_PLANTS: IPlant[] = [
 @Component({
   selector: 'app-plant-list',
   standalone: true,
-  imports: [MatTableModule, MatCheckboxModule],
+  imports: [
+    MatTableModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+  ],
   templateUrl: './plant-list.component.html',
   styleUrl: './plant-list.component.scss'
 })
@@ -28,6 +43,8 @@ export class PlantListComponent {
   displayedColumns: string[] = ['select', 'name', 'wateringNeeds'];
   dataSource = new MatTableDataSource<IPlant>(TEMP_PLANTS);
   selection = new SelectionModel<IPlant>(true, []);
+
+  nameFormControl = new FormControl('', [Validators.required, Validators.min(2)]);
 
   constructor(private plantService: PlantService) { }
 
@@ -56,5 +73,9 @@ export class PlantListComponent {
       .subscribe((response) => {
         console.log(response);
       })
+  }
+
+  newPlant() {
+    console.log(this.nameFormControl.value)
   }
 }
