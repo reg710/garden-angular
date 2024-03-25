@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlantService } from '../../services/plant.service';
 
 @Component({
   selector: 'app-plant-list',
@@ -9,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class PlantListComponent {
 
+  constructor(private plantService: PlantService) {}
+
+  fetchAllPlants() {
+    this.plantService.getAllPlants() 
+      .subscribe((response) => {
+        console.log(response);
+      })
+  }
 }

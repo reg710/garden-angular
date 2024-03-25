@@ -18,7 +18,7 @@ export class PlantService {
   // TODO add catchError to pipe
 
   getAllPlants(): Observable<IPlant[]> {
-    return this.httpClient.get<IPlant[]>(`${this.url}/plants`);
+    return this.httpClient.get<IPlant[]>(`${this.url}/plant`);
   }
 
   getPlant(id: string) {
