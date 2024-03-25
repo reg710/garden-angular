@@ -43,6 +43,8 @@ It was helpful to go through the MongoDB article on [https://www.mongodb.com/lan
 ## TODO
 
 - [ ] Add spinner to disable button while awaiting server response
+- [ ] Fix mobile text size
+- [ ] Fix gradient size/scrolling issue
 - [ ] Figure out what to do for validation on backend?
 - [ ] Add tests to backend
 - [ ] Figure out how to allow access in prod when not using home IP address
