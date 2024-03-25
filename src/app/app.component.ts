@@ -21,9 +21,5 @@ export class AppComponent {
   constructor() {}
 
   title = 'garden-angular';
-  weatherReport?: WeatherReport;
-
-  processWeather(report: WeatherReport) {
-    this.weatherReport = report;
-  }
+  
 }
