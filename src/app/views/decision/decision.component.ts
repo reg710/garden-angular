@@ -34,7 +34,7 @@ export class DecisionComponent implements OnChanges {
   }
 
   sumRainfall(data: IWeatherData[]): number {
-    return data.reduce((total, day) => day.precipitation + total, 0);
+    return Number(data.reduce((total, day) => day.precipitation + total, 0).toFixed(2));
   }
 
   sayYes() {
