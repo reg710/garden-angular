@@ -6,7 +6,18 @@
         <mat-slide-toggle [(ngModel)]="showLongAnswer">Show Long Answer</mat-slide-toggle>
     
         @if (showLongAnswer) {
-        <div class="long-answer">{{longAnswer}}</div>
+        <div class="long-answer">
+            
+            <p>Total Precipitation - {{this.totalRainfall}} inches</p>
+            <p>{{longAnswer}}</p>
+        
+            <ul class="report-list">
+                @for (daily of weatherReport?.data; track daily) {
+                    <li>{{ daily.datetimeStr | date:'MMM dd'}} - {{daily.precipitation}} inches</li>
+                }
+            </ul>
+
+        </div>
         }
     </mat-card-content>
 </mat-card>
