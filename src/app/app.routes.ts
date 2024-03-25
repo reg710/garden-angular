@@ -5,5 +5,5 @@ import { HomeComponent } from './views/home/home.component';
 export const routes: Routes = [
     { path: '', component: HomeComponent, title: 'Home' },
     { path: 'plants', component: PlantListComponent },
-    { path: '**', component: HomeComponent, title: 'Home'},
+    { path: '**', component: HomeComponent }, // could replace with 404 page
 ];

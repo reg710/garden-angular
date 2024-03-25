@@ -3,6 +3,7 @@ import { LocationSearchComponent } from '../location-search/location-search.comp
 import { DecisionComponent } from '../decision/decision.component';
 import { MatCardModule } from '@angular/material/card';
 import { WeatherReport } from '../../models/weather.model';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,15 @@ export class HomeComponent {
 
   weatherReport?: WeatherReport;
 
-  processWeather(report: WeatherReport) {
-    this.weatherReport = report;
+  constructor(private weatherService: WeatherService) {}
+
+  fetchWeather(zip: string) {
+    this.weatherService.getWeather(zip)
+    .subscribe((response) => {
+      if (response) {
+        this.weatherReport = response;
+      }
+    })
   }
+  
 }
