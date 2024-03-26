@@ -17,3 +17,17 @@
 .mat-mdc-card-content {
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .mat-mdc-form-field {
+        min-width: 150px;
+    }
+
+    h1 {
+        font-size: 1.75em
+    }
+
+    .mat-mdc-card-content {
+        font-size: 14px;
+    }
+}

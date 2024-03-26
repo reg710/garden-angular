@@ -34,3 +34,9 @@ button {
 .mat-mdc-card-content {
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .mat-mdc-form-field {
+        min-width: 150px;
+    }
+}

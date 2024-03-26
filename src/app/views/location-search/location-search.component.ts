@@ -24,8 +24,10 @@ export class LocationSearchComponent {
   @Output() onWeatherSearch = new EventEmitter<string>();
 
   zipFormControl = new FormControl('', [Validators.required, Validators.pattern(/^\d{5}$/g)])
+  searching: boolean = false;
 
   public fetchWeather() {
+    this.searching = true;
     let zip = this.zipFormControl.value;
     if (zip) {
       this.onWeatherSearch.emit(zip);
