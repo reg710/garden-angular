@@ -22,18 +22,18 @@ export class PlantService {
   }
 
   getPlant(id: string) {
-
+    return this.httpClient.get<IPlant>(`${this.url}/plant/${id}`)
   }
 
   newPlant(plant: IPlant) {
-
+    return this.httpClient.post(`${this.url}/plant`, plant, { responseType: 'text' })
   }
 
   updatePlant(id: string, plant: IPlant) {
-
+    return this.httpClient.put(`${this.url}/plant/${id}`, plant, { responseType: 'text' })
   }
 
   deletePlant(id: string) {
-
+    return this.httpClient.delete(`${this.url}/plant/${id}`, { responseType: 'text' })
   }
 }

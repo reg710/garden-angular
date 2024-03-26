@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
 import { PlantService } from '../../services/plant.service';
 import { SelectionModel } from '@angular/cdk/collections';
-import { MatTable, MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { IPlant } from '../../models/plant.model';
-import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Validators, FormsModule, ReactiveFormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,6 +21,7 @@ const TEMP_PLANTS: IPlant[] = [
     wateringNeeds: 'low'
   }
 ]
+
 @Component({
   selector: 'app-plant-list',
   standalone: true,
@@ -43,15 +44,33 @@ export class PlantListComponent {
   displayedColumns: string[] = ['select', 'name', 'wateringNeeds'];
   dataSource = new MatTableDataSource<IPlant>(TEMP_PLANTS);
   selection = new SelectionModel<IPlant>(true, []);
+  newPlantForm: FormGroup;
 
-  nameFormControl = new FormControl('', [Validators.required, Validators.min(2)]);
+  constructor(
+    private plantService: PlantService,
+    private fb: FormBuilder,
+  ) {
+    this.newPlantForm = this.fb.group({
+      name: ['', Validators.required],
+      wateringNeeds: ['', Validators.required]
+    })
+  }
 
-  constructor(private plantService: PlantService) { }
+  // ngAfterViewInit(): void {
+  //   this.loadPlants();
+  // }
+
+  // loadPlants() {
+  //   this.plantService.getAllPlants()
+  //     .subscribe((response) => {
+  //       this.dataSource = new MatTableDataSource(response);
+  //     })
+  // }
 
   // Checking the number selected against total number of rows in data source
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
+    const numRows = this.dataSource?.data.length;
     return numSelected === numRows;
   }
 
@@ -61,21 +80,20 @@ export class PlantListComponent {
       this.selection.clear();
       return;
     }
-
-    this.selection.select(...this.dataSource.data);
+    if (this.dataSource) {
+      this.selection.select(...this.dataSource.data);
+    }
   }
 
   // TODO track selected ids
 
-
-  fetchAllPlants() {
-    this.plantService.getAllPlants()
-      .subscribe((response) => {
-        console.log(response);
-      })
-  }
-
   newPlant() {
-    console.log(this.nameFormControl.value)
+    let plant = this.newPlantForm.value;
+    if (plant) {
+      this.plantService.newPlant(plant)
+        .subscribe((response) => {
+          console.log(response)
+        })
+    }
   }
 }
