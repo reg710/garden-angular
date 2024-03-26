@@ -26,17 +26,22 @@ export class LocationSearchComponent {
   @Output() onWeatherReport = new EventEmitter<WeatherReport>();
 
   zipFormControl = new FormControl('', [Validators.required, Validators.pattern(/^\d{5}$/g)])
+  searching: boolean = false;
 
   constructor(private weatherService: WeatherService) { }
 
   public fetchWeather() {
+    this.searching = true;
     let zip = this.zipFormControl.value;
     if (zip) {
       this.weatherService.getWeather(zip)
-        .subscribe((response) => {
-          if (response) {
-            this.onWeatherReport.emit(response);
-          }
+        .subscribe({
+          next: (response) => {
+            if (response) {
+              this.onWeatherReport.emit(response)
+            }
+          },
+          complete: () => this.searching = false
         })
     }
   }

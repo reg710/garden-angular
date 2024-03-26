@@ -9,7 +9,7 @@
         <mat-error>Required</mat-error>
         }
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="fetchWeather()" [disabled]="zipFormControl.invalid">
+    <button mat-raised-button color="primary" (click)="fetchWeather()" [disabled]="zipFormControl.invalid || searching">
         Search
     </button>
 </form>
